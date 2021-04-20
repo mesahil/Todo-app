@@ -1,0 +1,38 @@
+.app {
+display: flex;
+align-items: center;
+/* justify-content: center; */
+flex-direction: column;
+height: 100vh;
+background-color: lightgoldenrodyellow;
+padding-bottom: 20px;
+overflow:hidden;
+}
+
+.input{
+  display: flex;  
+}
+.input-text {
+  padding-right: 20px;
+}
+.text{
+  font-family: 'Sacramento', cursive;
+  font-size: 45px;
+  border: 1px solid;
+  padding: 1px 30px;
+  cursor: context-menu;
+  background-color: white;
+
+}
+.taskList{
+  overflow-y: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.taskList::-webkit-scrollbar{
+  display:none;
+}
+
+
+
+

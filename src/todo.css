@@ -1,0 +1,90 @@
+.todo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 300px;
+    flex-direction: column;
+}
+.text-strike{
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+}
+.text-edit > h3{
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+}
+.text-edit > h3:first-letter{
+    text-transform: capitalize
+}
+.text-edit{
+width: 100%;
+cursor: pointer;
+
+}
+.button{
+      display: flex;
+      align-items: center;
+}
+.but{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* modal */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; 
+  }
+  .modal-data{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .close {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .modal-text{
+      width: 100%;
+      outline: none;    
+      resize: none; 
+      min-height:60px;
+      min-width: 280px;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      overflow-y: scroll;
+  }
+  .modal-text::-webkit-scrollbar{
+    display:none;
+  }
+  .modal-button{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  }
+  .modal-button >button{
+   color: white;
+   background-color: blue;   
+  }
+  .modal-button >button:hover{
+      background-color: blue;
+  }
