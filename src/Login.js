@@ -30,7 +30,7 @@ function Login() {
                 
             }))
             
-        }).catch(e=>{console.log(e)})
+        }).catch(e=>{alert(e.message)})
 
     }
     return (    
