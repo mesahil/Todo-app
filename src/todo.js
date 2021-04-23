@@ -4,10 +4,12 @@ import { db } from './firebase'
 import DeleteIcon from '@material-ui/icons/Delete';
 import './todo.css'
 import Modal from 'react-modal';
+import { useSelector } from 'react-redux';
 Modal.setAppElement('#root');
 
 function Todo({id, task, time, done}) {
     const [modelIsOpen, setmodelIsOpen] = useState(false);
+    const user = useSelector(state => state.user.user)
     const [newtask, setNewtask] = useState(task);
     useEffect(() => {
         setNewtask(task)
@@ -16,17 +18,17 @@ function Todo({id, task, time, done}) {
         setmodelIsOpen(true)
     }
     const status = ()=>{
-        db.collection('tasks').doc(id).update({
+        db.collection(user.id).doc(id).update({
             done: !done
         })
     }   
     const remove = () =>{
-        db.collection("tasks").doc(id).delete();
+        db.collection(user.id).doc(id).delete();
     }
     const edit = (e)=>{
         e.preventDefault();
         console.log(newtask)
-        db.collection('tasks').doc(id).update({
+        db.collection(user.id).doc(id).update({
             todo:newtask
         })
         setmodelIsOpen(false)

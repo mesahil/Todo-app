@@ -15,11 +15,22 @@ overflow:hidden;
 .input-text {
   padding-right: 20px;
 }
+.header{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  flex-wrap: wrap;
+  max-width: 95vw;
+}
+
 .text{
   font-family: 'Sacramento', cursive;
   font-size: 45px;
   border: 1px solid;
   padding: 1px 30px;
+  padding-left: 60px;
   cursor: context-menu;
   background-color: white;
 

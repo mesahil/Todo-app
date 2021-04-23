@@ -1,0 +1,25 @@
+.signup{
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+}
+.signup-form{
+ display: flex;
+ flex-direction: column;
+ align-items: center;  
+ justify-content: space-between;
+ border: 1px solid blue;
+ padding: 40px;
+ padding-top: 5px;
+ padding-bottom: 20px;
+ border-radius: 10px;
+ margin-top: 15vh;
+ min-height: 270px;
+ background-color: white;
+}
+.signup-form > Button{
+    margin-top: 20px;
+}
+.signup-form >p{
+    margin: 5px;
+}
