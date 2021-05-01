@@ -35,7 +35,7 @@ function Login() {
                 
             }))
             
-            }).catch(e=>{alert(e.message)})
+            }).catch(e=>{alert(e.message + "firebase")})
         }
     }
     return (    
