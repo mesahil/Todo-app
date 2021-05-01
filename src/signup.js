@@ -27,7 +27,7 @@ function Signup() {
                 }))
                 history.replace({pathname:'/login'})
             }
-            )
+            ).catch(e=>alert(e.message))
         }
     }
     return (
