@@ -28,14 +28,14 @@ function Login() {
         }
         else{
             auth.signInWithEmailAndPassword(email,password).then(userAuth=>{
-                console.log(userAuth.user.uid);
-                dispatch(login({
-                    user: userAuth.user.email,
-                    id: userAuth.user.uid,
-                    
-                }))
+            console.log(userAuth.user.uid);
+            dispatch(login({
+                user: userAuth.user.email,
+                id: userAuth.user.uid,
                 
-            }).catch(   )
+            }))
+            
+            }).catch(e=>{alert(e.message)})
         }
     }
     return (    
