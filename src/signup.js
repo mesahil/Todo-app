@@ -13,6 +13,9 @@ function Signup() {
     let history = useHistory();
     const signup = (e)=>{
         e.preventDefault();
+        if(email===''||password===''||cpassword===''){
+            alert("All fields are mandatory")
+        }
         if(password!==cpassword){
             alert("Passwords doesn't match");
         }
@@ -34,7 +37,7 @@ function Signup() {
                 <TextField id="standard-basic" label="Email" value={email} onChange={e=> setEmail(e.target.value)}/>
                 <TextField type='password' id="standard-basic" label="Password" value={password} onChange={e=> setPassword(e.target.value)}/>
                 <TextField type='password' id="standard-basic" label="Confirm Password" value={cpassword} onChange={e=> setCpassword(e.target.value)}/>
-                <Button type="submit" onClick={signup} variant="contained" color='primary'> Log In</Button>
+                <Button type="submit" onClick={signup} variant="contained" color='primary'> Sign Up</Button>
                 <p>Already Have An Account? </p>
                 <Link to='/login'>Login</Link>
             </form>

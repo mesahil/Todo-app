@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from './features/userSlice';
 import Logged from './logged';
 import Signup from './signup';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, useHistory } from 'react-router';
+
 
 function App() {
+  let history = useHistory();
   const user = useSelector(state => state.user.user)
   const dispatch = useDispatch()
   useEffect(() => {
@@ -24,7 +26,7 @@ function App() {
     <div className="app">
       <Switch>
           <Route exact path="/signup">
-            {(!user)?(<Signup />):(<Logged/>)}
+            {(!user)?(<Signup />):(history.replace({pathname:'/login'}))}
           </Route>
           <Route path="/">
           {(!user)?(<Login/>):(<Logged/>)}

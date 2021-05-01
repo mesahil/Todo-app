@@ -19,6 +19,7 @@
 }
 .signup-form > Button{
     margin-top: 20px;
+    width: 100%;
 }
 .signup-form >p{
     margin: 5px;

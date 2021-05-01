@@ -6,6 +6,7 @@
 .login{
  display: flex;
  flex-direction: column;  
+ align-items: center;
  justify-content: space-between;
  border: 1px solid blue;
  padding: 40px;
@@ -13,6 +14,9 @@
  margin-top: 15vh;
  min-height: 270px;
  background-color: white;
+}
+.login > Button{
+    width: 100%;
 }
 
 

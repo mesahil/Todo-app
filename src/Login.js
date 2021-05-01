@@ -12,6 +12,7 @@ const useStyles = makeStyles({
       width:"100%",
       fontWeight:'500',
       color:'white',
+      minWidth:'200px'
     },
   });   
 
@@ -22,26 +23,31 @@ function Login() {
     const [password, setPassword] = useState('');
     const login =(e)=>{
         e.preventDefault();
-        auth.signInWithEmailAndPassword(email,password).then(userAuth=>{
-            console.log(userAuth.user.uid);
-            dispatch(login({
-                user: userAuth.user.email,
-                id: userAuth.user.uid,
+        if(email==='' || password===''){
+            alert('All fields are mandatory')
+        }
+        else{
+            auth.signInWithEmailAndPassword(email,password).then(userAuth=>{
+                console.log(userAuth.user.uid);
+                dispatch(login({
+                    user: userAuth.user.email,
+                    id: userAuth.user.uid,
+                    
+                }))
                 
-            }))
-            
-        }).catch(e=>{console.log(e)})
-
+            }).catch(   )
+        }
     }
     return (    
         <div className="login-container">
             <form className="login">
+            <h2>Log In</h2>
                 <TextField id="standard-basic" label="Email" value={email} onChange={e=> setEmail(e.target.value)}/>
                 <TextField type='password' id="standard-basic" label="Password" value={password} onChange={e=> setPassword(e.target.value)}/>
                 <Button type="submit" onClick={login} variant="contained" color='primary'> Log In</Button>
                 <Link to="/signup" style={{textDecoration:'none'}}>
                     <Button variant="contained" className={classes.signup}>Sign UP
-                </Button>
+                    </Button>
                 </Link>
                 
                 
